@@ -11,8 +11,8 @@ class App < Sinatra::Base
     # @latinized_word = "#{piglatinize.piglatinize(params[:user_phrase])}"
 
     user_word = params[:user_phrase]
-    piglatinize_obj = PigLatinizer.new
-     @latinize_text = "#{piglatinize_obj.piglatinize(text_from_user)}"
+    piglatinize = PigLatinizer.new
+     @latinize_text = "#{piglatinize.piglatinize(user_word)}"
 
     erb :pig_latinized
   end
